@@ -54,9 +54,9 @@ Returning to the dichotomy previous presented between interpretable models vs. d
 |           | Interpretable Models              | Interpretable Decisions  |
 | --------- |:---------------------------------:| ------------------------:|
 | Desired by| Model creator                     | Model users              |
-| Type      | - Simulatability                  | Semantic Explanation     |
-|           | - Decomposability/Intelligibility | Visualization            |
-|           | - Algorithm Transparency          | Local Explanation        |
+| Type      | Simulatability                    | Semantic Explanation     |
+|           | Decomposability/Intelligibility   | Visualization            |
+|           | Algorithm Transparency            | Local Explanation        |
 |           |                                   | Explanation by example   |
 | Method of achieving | Built into model        | Post-hoc                 |
 
@@ -102,7 +102,7 @@ In order to learn a sparse model, the standard least squares problem can be modi
 
 ![lasso](https://jamesmccammondotcom.files.wordpress.com/2014/04/screen-shot-2014-04-19-at-11-19-00-pm.png?w=700)
 
-An intuitive explanation for why L1 regression leads to sparsity is as follows: if the component of the squared loss corresponding to a particular weight does not die down fast enough, then the L1regularization term will just set it to 0. The L1 regularization tends to choose features that have a higher correlation with Y. If all features are equally correlated, then LASSO regression will not lead to sparsity, since the loss corresponding to all features will decay at the same rate as their weight is increased.
+An intuitive explanation for why L1 regression leads to sparsity is as follows: if the component of the squared loss corresponding to a particular weight does not die down fast enough, then the L1 regularization term will just set it to 0. The L1 regularization tends to choose features that have a higher correlation with Y. If all features are equally correlated, then LASSO regression will not lead to sparsity, since the loss corresponding to all features will decay at the same rate as their weight is increased.
 
 ### Sparse LDA
 Latent Dirichlet Allocation (LDA) is a generative model used in Natural Language Processing which allows for the representation of documents as a collection of topics, where each topic determines the probabilities of the appearance of words from the overall vocabulary. While the generative model employed by LDA is interpretable in the sense that it is decomposable, the topics uncovered by LDA for a particular document may not be very informative, since the vocabulary may be very large, and a large number of words under each topic may have non-zero probabilities. To counter this, each topic needs to be sparse. Unstructured sparsity can be induced by adding another prior which enforces the condition that many of the word probabilities under each topic must be zero. Each topic is then represented by a small subset of words that explain most of that topic.
@@ -168,19 +168,35 @@ In terms of the flexibility afforded to practitioners of machine learning by the
 
 # Works Cited
 [1] Caruana et al, [Intelligible Models for Healthcare](http://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf)
+
 [2] Datta et al, [Algorithmic Transparency via Quantitative Input Influence](https://www.andrew.cmu.edu/user/danupam/datta-sen-zick-oakland16.pdf)
+
 [3] Doshi-Velez and Kim, [Towards a Rigorous Science of Interpretable Machine Learning](https://arxiv.org/pdf/1702.08608.pdf) 
+
 [4] Lipton, [The Mythos of Model Interpretability](https://arxiv.org/pdf/1606.03490.pdf)
+
 [5] Ribeiro et al, ["Why Should I Trust You?" Explaining the Predictions of Any Classifier](http://www.kdd.org/kdd2016/papers/files/rfp0573-ribeiroA.pdf)
+
 [6] Selvaraju et al., [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/pdf/1610.02391.pdf)
+
 [7] Breiman et al., [Classification and regression trees](https://books.google.com/books/about/Classification_and_Regression_Trees.html?id=JwQx-WOmSyQC)
+
 [8] Wang et al., [Bayesian Or's of And's for Interpretable Classification with Application to Context Aware Recommender Systems](https://arxiv.org/abs/1504.07614)
+
 [9] Kim et al., [The Bayesian Case Model: A Generative Approach for Case-Based Reasoning and Prototype Classification](https://arxiv.org/abs/1503.01161)
+
 [10] Doshi-Velez et al., [Graph-Sparse LDA: A Topic Model with Structured Sparsity](https://arxiv.org/abs/1410.4510)
+
 [11] Ribeiro et al., ["Why Should I Trust You?" Explaining the Predictions of Any Classiﬁer](https://arxiv.org/abs/1602.04938)
+
 [12] Simonyan et al., [Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps](https://arxiv.org/abs/1312.6034)
+
 [13] Erhan et al., [Understanding Representations Learned in Deep Architectures](http://www.dumitru.ca/files/publications/invariances_techreport.pdf)
+
 [14] Le et al., [Building high level features using large scale unsupervised learning](https://arxiv.org/abs/1112.6209)
+
 [15] Selvaraju et al., [Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization](https://arxiv.org/pdf/1610.02391.pdf)
+
 [16] Bau et al., [Network Dissection: Quantifying Interpretability of Deep Visual Representations](https://arxiv.org/abs/1704.05796)
+
 [17] Koh and Liang, [Understanding Black-box Predictions via Inﬂuence Functions](https://arxiv.org/abs/1703.04730)
